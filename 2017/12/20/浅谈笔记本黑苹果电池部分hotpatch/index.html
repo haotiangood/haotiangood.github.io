@@ -86,6 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="序言关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl文件拿来照猫画虎，并不明白其中添加、替换、修补的部分到底从何而来，失败也是">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/SSDT_NEW.jpg">
 <meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg">
 <meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Scope1.jpg">
 <meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/UP.jpg">
@@ -103,11 +104,11 @@
 <meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Clover.jpg">
 <meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Snipaste_2017-12-20_15-46-50.jpg">
 <meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/jz.jpg">
-<meta property="og:updated_time" content="2017-12-20T09:22:26.339Z">
+<meta property="og:updated_time" content="2017-12-20T09:24:24.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈笔记本黑苹果电池部分hotpatch">
 <meta name="twitter:description" content="序言关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl文件拿来照猫画虎，并不明白其中添加、替换、修补的部分到底从何而来，失败也是">
-<meta name="twitter:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg">
+<meta name="twitter:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/SSDT_NEW.jpg">
 
 
 
@@ -325,7 +326,7 @@
 <p>至此，准备工作结束。</p>
 <h2 id="Patching"><a href="#Patching" class="headerlink" title="Patching"></a>Patching</h2><p>打开Maciasl，新建一个空白文件SSDT-NEW.dsl，将下面的内容粘贴进去。这是一个表头，说明这个文件是一个名叫batt的SSDT表。</p>
 <p><code>DefinitionBlock(&quot;&quot;, &quot;SSDT&quot;, 2, &quot;hack&quot;, &quot;batt&quot;, 0){}</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img SSDT_NEW.jpg %&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/SSDT_NEW.jpg">
 <p>打开DiffMerge，导入DSDT.dsl和DSDT-Patched.dsl进行对比，两个文件的不同之处会在软件中显示出来。</p>
 <p>窗口最左侧的白色长条里面的红色方块就是两个文件不同的地方了，我们要做的就是将DSDT-Patched.dsl里这些包含不同之处的所有Method、OperationRegion Field统统复制到SSDT-NEW.dsl里面并且按照一定的规则布置成一个可以使用的SSDT表。</p>
 <img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg">
