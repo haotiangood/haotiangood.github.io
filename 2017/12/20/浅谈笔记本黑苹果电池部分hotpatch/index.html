@@ -79,55 +79,35 @@
 
 
 
-<meta name="description" content="title: 浅谈笔记本黑苹果电池部分hotpatch 序言​        关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有">
+<meta name="description" content="序言关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="浅谈笔记本黑苹果电池部分hotpatch">
 <meta property="og:url" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: 浅谈笔记本黑苹果电池部分hotpatch 序言​        关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl">
+<meta property="og:description" content="序言关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl文件拿来照猫画虎，并不明白其中添加、替换、修补的部分到底从何而来，失败也是">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/SSDT_NEW.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/DiffMerge.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Jump%20to%20Line.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Jump%20to%20Line2.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Jump%20to%20Line3.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Scope1.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/UP.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/全选复制.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/粘贴位置.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/删同留异.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Method%20DiffMerge.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Method%20DSDT-Patched.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Method%20Mark.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Method%20Copy.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/NEW%20SCOPE.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Method%20Paste.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/SSDT%20DP1.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/SSDT%20DP2.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/compile1.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/SSDT%20ERROR.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/H_EC.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/DeviceObj.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/ERROR%20RM.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/SECW.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/SECW%20dsdt.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/SECW%20WZ.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/OSYS.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/OSYS%20sb.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/OSYS%20dsdt.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/OSYS%20wz.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/INT.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/pkg.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/method.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Clover.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/Snipaste_2017-12-20_15-46-50.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/_BIF.jpg">
-<meta property="og:image" content="https://haotiangood.github.io/Users/Horton/Documents/jz.jpg">
-<meta property="og:updated_time" content="2017-12-20T08:16:56.080Z">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Scope1.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/UP.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/粘贴位置.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/删同留异.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/compile1.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/H_EC.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DeviceObj.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/SECW.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/OSYS.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/INT.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/pkg.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/method.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Clover.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Snipaste_2017-12-20_15-46-50.jpg">
+<meta property="og:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/jz.jpg">
+<meta property="og:updated_time" content="2017-12-20T09:22:26.339Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: 浅谈笔记本黑苹果电池部分hotpatch 序言​        关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl">
-<meta name="twitter:image" content="https://haotiangood.github.io/Users/Horton/Documents/SSDT_NEW.jpg">
+<meta name="twitter:title" content="浅谈笔记本黑苹果电池部分hotpatch">
+<meta name="twitter:description" content="序言关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl文件拿来照猫画虎，并不明白其中添加、替换、修补的部分到底从何而来，失败也是">
+<meta name="twitter:image" content="https://haotiangood.github.io/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg">
 
 
 
@@ -163,7 +143,7 @@
 
 
 
-  <title> | Hexo</title>
+  <title>浅谈笔记本黑苹果电池部分hotpatch | Hexo</title>
   
 
 
@@ -287,7 +267,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">浅谈笔记本黑苹果电池部分hotpatch</h1>
         
 
         <div class="post-meta">
@@ -299,7 +279,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T09:25:51+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T17:03:56+08:00">
                 2017-12-20
               </time>
             
@@ -337,91 +317,91 @@
       
 
       
-        <p>title: 浅谈笔记本黑苹果电池部分hotpatch</p>
-<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>​        关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl文件拿来照猫画虎，并不明白其中添加、替换、修补的部分到底从何而来，失败也是家常便饭。本人有幸循Mr. Rehabman之教程，搞定了三星NP-RC520-S01CN电池部分的hotpatch，也算是对这其中的“重点”有所领悟，谨以此文作为记录。</p>
-<h2 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h2><p>​        RC520-S01的配置不多说，我自己换了i7-2760QM和BCM94352HMB无线网卡，添加了一条4G内存，加了光驱硬盘托架，其他均是原配。BIOS方面开启UEFI、AHCI，删除了FastWarmBoot模块以便于每次重启过程中都能使用USB键盘，打了MSR 0xE2补丁开启原生电源管理，核显显存调整为128M（最大值），其他选项默认。系统方面为Win10 1709+macOS High Sierra10.13.2双系统（分别装在两块硬盘中），Clover ver.3459引导。软件方面，准备iasl、Maciasl和DiffMerge。</p>
-<p>​        首先用Clover的F4功能提取ACPI表，并将DSDT、SSDT单独复制到一个文件夹备用（这里我复制到~/Desktop/BAT/Work1文件夹下）。</p>
-<p>​        下载iasl对DSDT、SSDT进行反编译，得到dsl文件。</p>
-<p>​        用Maciasl打开DSDT.dsl，通过Mr. Rehabman的补丁源打好电池补丁，将文件另存为DSDT-Patched.dsl。</p>
-<p>​        至此，准备工作结束。</p>
-<h2 id="Patching"><a href="#Patching" class="headerlink" title="Patching"></a>Patching</h2><p>​        打开Maciasl，新建一个空白文件SSDT-NEW.dsl，将下面的内容粘贴进去。这是一个表头，说明这个文件是一个名叫batt的SSDT表。</p>
+        <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>关于给dsdt打hotpatch的教程tonyx86和GitHub上有关于此的介绍和资源不少，以Rehabman大神为首的各路大神对此贡献很大。但是鉴于Mr. Rehabman的教程是英文，且国内多数论坛只是对他的教程进行了简单的翻译，并没有与之配套的Example作为众小白的练习素材，导致部分小白只是把别人改好的dsl文件拿来照猫画虎，并不明白其中添加、替换、修补的部分到底从何而来，失败也是家常便饭。本人有幸循Mr. Rehabman之教程，搞定了三星NP-RC520-S01CN电池部分的hotpatch，也算是对这其中的“重点”有所领悟，谨以此文作为记录。</p>
+<h2 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h2><p>RC520-S01的配置不多说，我自己换了i7-2760QM和BCM94352HMB无线网卡，添加了一条4G内存，加了光驱硬盘托架，其他均是原配。BIOS方面开启UEFI、AHCI，删除了FastWarmBoot模块以便于每次重启过程中都能使用USB键盘，打了MSR 0xE2补丁开启原生电源管理，核显显存调整为128M（最大值），其他选项默认。系统方面为Win10 1709+macOS High Sierra10.13.2双系统（分别装在两块硬盘中），Clover ver.3459引导。软件方面，准备iasl、Maciasl和DiffMerge。</p>
+<p>首先用Clover的F4功能提取ACPI表，并将DSDT、SSDT单独复制到一个文件夹备用（这里我复制到~/Desktop/BAT/Work1文件夹下）。</p>
+<p>下载iasl对DSDT、SSDT进行反编译，得到dsl文件。</p>
+<p>用Maciasl打开DSDT.dsl，通过Mr. Rehabman的补丁源打好电池补丁，将文件另存为DSDT-Patched.dsl。</p>
+<p>至此，准备工作结束。</p>
+<h2 id="Patching"><a href="#Patching" class="headerlink" title="Patching"></a>Patching</h2><p>打开Maciasl，新建一个空白文件SSDT-NEW.dsl，将下面的内容粘贴进去。这是一个表头，说明这个文件是一个名叫batt的SSDT表。</p>
 <p><code>DefinitionBlock(&quot;&quot;, &quot;SSDT&quot;, 2, &quot;hack&quot;, &quot;batt&quot;, 0){}</code></p>
-<p><img src="/Users/Horton/Documents/SSDT_NEW.jpg" alt="SSDT_NEW"></p>
-<p>​        打开DiffMerge，导入DSDT.dsl和DSDT-Patched.dsl进行对比，两个文件的不同之处会在软件中显示出来。</p>
-<p>​        窗口最左侧的白色长条里面的红色方块就是两个文件不同的地方了，我们要做的就是将DSDT-Patched.dsl里这些包含不同之处的所有Method、OperationRegion Field统统复制到SSDT-NEW.dsl里面并且按照一定的规则布置成一个可以使用的SSDT表。<img src="/Users/Horton/Documents/DiffMerge.jpg" alt="DiffMerge"></p>
-<p>​        首先，锁定第一处不同（上图）记下行号，然后在Maciasl中定位到不同之处所在行（在DSDT-Patched.dsl中为第2944行）。</p>
-<p><img src="/Users/Horton/Documents/Jump to Line.jpg" alt="Jump to Line"></p>
-<p><img src="/Users/Horton/Documents/Jump to Line2.jpg" alt="Jump to Line2"></p>
-<p>​        注意Maciasl窗口左侧该行在dsdt表中所在的位置为H_EC&lt;LPCB&lt;PCI0&lt;_SB（如果不知道怎么看该行所在位置，可以注意窗口左侧的深色高亮长条，它指示了该行的所在位置）。</p>
-<p><img src="/Users/Horton/Documents/Jump to Line3.jpg" alt="Jump to Line3"></p>
-<p>​        于是，在SSDT-NEW.dsl中添加Scope：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img SSDT_NEW.jpg %&#125;</span><br></pre></td></tr></table></figure>
+<p>打开DiffMerge，导入DSDT.dsl和DSDT-Patched.dsl进行对比，两个文件的不同之处会在软件中显示出来。</p>
+<p>窗口最左侧的白色长条里面的红色方块就是两个文件不同的地方了，我们要做的就是将DSDT-Patched.dsl里这些包含不同之处的所有Method、OperationRegion Field统统复制到SSDT-NEW.dsl里面并且按照一定的规则布置成一个可以使用的SSDT表。</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg">
+<p>首先，锁定第一处不同（上图）记下行号，然后在Maciasl中定位到不同之处所在行（在DSDT-Patched.dsl中为第2944行）。</p>
+
+
+<p>注意Maciasl窗口左侧该行在dsdt表中所在的位置为H_EC&lt;LPCB&lt;PCI0&lt;_SB（如果不知道怎么看该行所在位置，可以注意窗口左侧的深色高亮长条，它指示了该行的所在位置）。</p>
+
+<p>于是，在SSDT-NEW.dsl中添加Scope：</p>
 <p><code>Scope (_SB.PCI0.LPCB.H_EC){}</code></p>
-<p><img src="/Users/Horton/Documents/Scope1.jpg" alt="Scope1"></p>
-<p>​        接下来，在DSDT-Patched.dsl中顺着2944行向上找到完整包裹该行内容的花括号</p>
-<p><img src="/Users/Horton/Documents/UP.jpg" alt="UP"></p>
-<p>​        复制包括表头在内的所有花括号内的内容到SSDT-NEW.dsl中，注意一定要将它放在与DSDT-Patched.dsl中相同的位置（即Scope (_SB.PCI0.LPCB.H_EC)下），</p>
-<p><img src="/Users/Horton/Documents/全选复制.jpg" alt="全选复制"></p>
-<p><img src="/Users/Horton/Documents/粘贴位置.jpg" alt="粘贴位置"></p>
-<p>​        根据DiffMerge中的对比结果，删掉SSDT-NEW.dsl中“无用”的内容（即保留不同，删掉相同），</p>
-<p><img src="/Users/Horton/Documents/删同留异.jpg" alt="删同留异"></p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Scope1.jpg">
+<p>接下来，在DSDT-Patched.dsl中顺着2944行向上找到完整包裹该行内容的花括号</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/UP.jpg">
+<p>复制包括表头在内的所有花括号内的内容到SSDT-NEW.dsl中，注意一定要将它放在与DSDT-Patched.dsl中相同的位置（即Scope (_SB.PCI0.LPCB.H_EC)下），</p>
+
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/粘贴位置.jpg">
+<p>根据DiffMerge中的对比结果，删掉SSDT-NEW.dsl中“无用”的内容（即保留不同，删掉相同），</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/删同留异.jpg">
 <p><strong>以上是针对OperationRegion Field的创建方法，针对Method的方法如下：</strong></p>
-<p>​        与OperationRegion Field的创建一样，首先在DiffMerge中锁定到包含不同内容的行，记下行号，去Maciasl中定位到该行号，向上找到包含该行内容的Method并复制整个Method内容，粘贴到SSDT-NEW.dsl里面对应位置，</p>
-<p><img src="/Users/Horton/Documents/Method DiffMerge.jpg" alt="Method DiffMerge"></p>
-<p><img src="/Users/Horton/Documents/Method DSDT-Patched.jpg" alt="Method DSDT-Patched"></p>
-<p><img src="/Users/Horton/Documents/Method Mark.jpg" alt="Method Mark"></p>
-<p><img src="/Users/Horton/Documents/Method Copy.jpg" alt="Method Copy"></p>
-<p><img src="/Users/Horton/Documents/NEW SCOPE.jpg" alt="NEW SCOPE"></p>
-<p><img src="/Users/Horton/Documents/Method Paste.jpg" alt="Method Paste"></p>
-<p>​        以此类推，将所有的Method和OperationRegion Field按照DSDT-Patched.dsl内对应的位置复制到SSDT-NEW.dsl里之后，SSDT-NEW.dsl内的文件结构应该是这样的（以素材为例）：</p>
-<p><img src="/Users/Horton/Documents/SSDT DP1.jpg" alt="SSDT DP1"></p>
-<p><img src="/Users/Horton/Documents/SSDT DP2.jpg" alt="SSDT DP2"></p>
-<p>​        至此，SSDT-NEW.dsl的创建工作基本完成。</p>
-<h2 id="Compilation"><a href="#Compilation" class="headerlink" title="Compilation"></a>Compilation</h2><p>​        此时，点击Maciasl中的Compile按钮，十有八九会出现编译不通过的情况。如果上一步的复制过程没有出现纰漏，那么出现的错误应该基本全是“Object not found······”或者“Object does not exist······”而不应该出现类似“syntax error,······”的语法错误</p>
-<p><img src="/Users/Horton/Documents/compile1.jpg" alt="compile1"></p>
-<p><img src="/Users/Horton/Documents/SSDT ERROR.jpg" alt="SSDT ERROR"></p>
-<p>​        解决“Object not found······”或者“Object does not exist······”的错误可以说非常简单，因为错误提示后面的括号里已经给出了缺失或者说未定义“模块”（暂且叫它模块吧，我还没想好其他名字）的名称，只需在DSDT-Patched.dsl中找到对应的“模块”并且在SSDT-NEW.dsl里面重新定义它就行了。</p>
-<p>​        定义模块同样需要说明他们的使用位置，避免出现不可预料的后果。根据Mr. Rehabman的说法，未定义的模块大体分为Device ()、Method（）、Name（）、Store（）和Field（）五种，而模块的定义名称决定了系统读取ssdt表的时候对其采取的处理方法，通常情况下，Device （）模块被定义为“DeviceObj”，Method模块被定义为“MethodObj”，Name模块被定义为“IntObj”，Store模块被定义为“PkgObj”，Field模块被定义为“FieldUnitObj”。</p>
-<p>​        以素材为例，首先看第一个未定义的模块”SB.PCI0.LPCB.H_EC”，在DSDT-Patched.dsl中搜索H_EC可见，找到的<strong>最前面一个</strong>Device (H_EC)刚好对应”SB.PCI0.LPCB.H_EC”，于是轻松得出_SB.PCI0.LPCB.H_EC对应的定义应该是DeviceObj，将它写入SSDT-NEW.dsl，再次点Compile，发现错误已经消失了。</p>
+<p>与OperationRegion Field的创建一样，首先在DiffMerge中锁定到包含不同内容的行，记下行号，去Maciasl中定位到该行号，向上找到包含该行内容的Method并复制整个Method内容，粘贴到SSDT-NEW.dsl里面对应位置，</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DiffMerge.jpg" class="Method">
+
+
+
+
+
+<p>以此类推，将所有的Method和OperationRegion Field按照DSDT-Patched.dsl内对应的位置复制到SSDT-NEW.dsl里之后，SSDT-NEW.dsl内的文件结构应该是这样的（以素材为例）：</p>
+
+
+<p>至此，SSDT-NEW.dsl的创建工作基本完成。</p>
+<h2 id="Compilation"><a href="#Compilation" class="headerlink" title="Compilation"></a>Compilation</h2><p>此时，点击Maciasl中的Compile按钮，十有八九会出现编译不通过的情况。如果上一步的复制过程没有出现纰漏，那么出现的错误应该基本全是“Object not found······”或者“Object does not exist······”而不应该出现类似“syntax error,······”的语法错误</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/compile1.jpg">
+
+<p>解决“Object not found······”或者“Object does not exist······”的错误可以说非常简单，因为错误提示后面的括号里已经给出了缺失或者说未定义“模块”（暂且叫它模块吧，我还没想好其他名字）的名称，只需在DSDT-Patched.dsl中找到对应的“模块”并且在SSDT-NEW.dsl里面重新定义它就行了。</p>
+<p>定义模块同样需要说明他们的使用位置，避免出现不可预料的后果。根据Mr. Rehabman的说法，未定义的模块大体分为Device ()、Method（）、Name（）、Store（）和Field（）五种，而模块的定义名称决定了系统读取ssdt表的时候对其采取的处理方法，通常情况下，Device （）模块被定义为“DeviceObj”，Method模块被定义为“MethodObj”，Name模块被定义为“IntObj”，Store模块被定义为“PkgObj”，Field模块被定义为“FieldUnitObj”。</p>
+<p>以素材为例，首先看第一个未定义的模块”SB.PCI0.LPCB.H_EC”，在DSDT-Patched.dsl中搜索H_EC可见，找到的<strong>最前面一个</strong>Device (H_EC)刚好对应”SB.PCI0.LPCB.H_EC”，于是轻松得出_SB.PCI0.LPCB.H_EC对应的定义应该是DeviceObj，将它写入SSDT-NEW.dsl，再次点Compile，发现错误已经消失了。</p>
 <p><code>External (_SB.PCI0.LPCB.H_EC, DeviceObj)</code></p>
-<p><img src="/Users/Horton/Documents/H_EC.jpg" alt="H_EC"></p>
-<p><img src="/Users/Horton/Documents/DeviceObj.jpg" alt="DeviceObj"></p>
-<p><img src="/Users/Horton/Documents/ERROR RM.jpg" alt="ERROR RM"></p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/H_EC.jpg">
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/DeviceObj.jpg">
+
 <p><strong>下面分别挑其他几个模块稍作说明，剩余模块以此类推：</strong></p>
 <p><strong>Method ()</strong></p>
-<p>​        搜索DSDT-Patched.dsl可见，最前面一个SECW是一个Method ()，它的位置位于_SB下并且没有其他的Method (SECW)，所以这个Method就是我们要找的了，将它定义到SSDT-NEW.dsl里即可。</p>
+<p>搜索DSDT-Patched.dsl可见，最前面一个SECW是一个Method ()，它的位置位于_SB下并且没有其他的Method (SECW)，所以这个Method就是我们要找的了，将它定义到SSDT-NEW.dsl里即可。</p>
 <p><u><strong><em>定义的时候一定要写清楚模块所在位置</em></strong></u></p>
 <p><code>External (_SB.SECW, MethodObj)</code></p>
-<p><img src="/Users/Horton/Documents/SECW.jpg" alt="SECW"></p>
-<p><img src="/Users/Horton/Documents/SECW dsdt.jpg" alt="SECW dsdt"></p>
-<p><img src="/Users/Horton/Documents/SECW WZ.jpg" alt="SECW WZ"></p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/SECW.jpg">
+
+
 <p><strong>Field ()</strong></p>
-<p>​        可以看到错误提示中出现了两个OSYS模块，但是明显这两个模块所在位置不同，所以在DSDT-Patched.dsl中搜索OSYS的时候就要格外注意了，特别是这两个OSYS模块还都是Field模块。</p>
+<p>可以看到错误提示中出现了两个OSYS模块，但是明显这两个模块所在位置不同，所以在DSDT-Patched.dsl中搜索OSYS的时候就要格外注意了，特别是这两个OSYS模块还都是Field模块。</p>
 <p><strong><em><u>再次强调，定义的时候一定要写清楚具体位置！！！</u></em></strong></p>
-<p><img src="/Users/Horton/Documents/OSYS.jpg" alt="OSYS"></p>
-<p><img src="/Users/Horton/Documents/OSYS sb.jpg" alt="OSYS sb"></p>
-<p><img src="/Users/Horton/Documents/OSYS dsdt.jpg" alt="OSYS dsdt"></p>
-<p><img src="/Users/Horton/Documents/OSYS wz.jpg" alt="OSYS wz"></p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/OSYS.jpg">
+
+
+
 <p>其他几个模块只做截图说明，寻找方法跟上面两个一样。</p>
 <p><strong><em><u>注意：相同位置下一般以文档开头出现的模块作为首选！！！</u></em></strong></p>
-<p><img src="/Users/Horton/Documents/INT.jpg" alt="INT"></p>
-<p><img src="/Users/Horton/Documents/pkg.jpg" alt="pkg"></p>
-<p>​        定义完所有模块之后，SSDT-NEW.dsl应该就会编译通过了，至此SSDT-NEW已经能够使用了。</p>
-<h2 id="Clover的Config-plist设置"><a href="#Clover的Config-plist设置" class="headerlink" title="Clover的Config.plist设置"></a>Clover的Config.plist设置</h2><p>​        新版本Clover已经可以直接对DSDT中的某些内容“改名”了，这里就需要利用这一功能实现对我们刚刚做好的SSDT-NEW的调用。</p>
-<p>​        原理：修改DSDT中某个“模块”的名称，使得当系统调用这个模块的时候自动调用SSDT中的“同名”（与修改前的DSDT里的模块名字相同），达到偷天换日的效果。</p>
-<p>​        素材中的SSDT-NEW里面有我们从DSDT-Patched里复制过来的Method主体（<strong><em><u>注意：绝非上面提到的定义MethodObj！！！主体是有具体内容的！！！</u></em></strong>），要想系统跳过DSDT调用SSDT里面的Method，就需要对原来DSDT里面的Method改名，工具就是大名鼎鼎的Clover Configurator了。</p>
-<p><img src="/Users/Horton/Documents/method.jpg" alt="method"></p>
-<p><img src="/Users/Horton/Documents/Clover.jpg" alt="Clover"></p>
-<p>​        容易理解上图中Find<em>[HEX]里的内容就是原DSDT中的内容了（也即上图中标注的有主体的Method的名字），而Replace[HEX]就是要替换的名字了（**</em><u>这个名字可以随便取，但是，但是，但是，不能与DSDT中任何已有名字冲突，否则后果很严重，很严重，很严重！！！</u><em>*</em>）。</p>
-<p>​        这个HEX码是怎么来的呢？推荐一个网站，可以将ASCII码转换成各种东西。</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/INT.jpg">
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/pkg.jpg">
+<p>定义完所有模块之后，SSDT-NEW.dsl应该就会编译通过了，至此SSDT-NEW已经能够使用了。</p>
+<h2 id="Clover的Config-plist设置"><a href="#Clover的Config-plist设置" class="headerlink" title="Clover的Config.plist设置"></a>Clover的Config.plist设置</h2><p>新版本Clover已经可以直接对DSDT中的某些内容“改名”了，这里就需要利用这一功能实现对我们刚刚做好的SSDT-NEW的调用。</p>
+<p>原理：修改DSDT中某个“模块”的名称，使得当系统调用这个模块的时候自动调用SSDT中的“同名”（与修改前的DSDT里的模块名字相同），达到偷天换日的效果。</p>
+<p>素材中的SSDT-NEW里面有我们从DSDT-Patched里复制过来的Method主体（<strong><em><u>注意：绝非上面提到的定义MethodObj！！！主体是有具体内容的！！！</u></em></strong>），要想系统跳过DSDT调用SSDT里面的Method，就需要对原来DSDT里面的Method改名，工具就是大名鼎鼎的Clover Configurator了。</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/method.jpg">
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Clover.jpg">
+<p>容易理解上图中Find<em>[HEX]里的内容就是原DSDT中的内容了（也即上图中标注的有主体的Method的名字），而Replace[HEX]就是要替换的名字了（**</em><u>这个名字可以随便取，但是，但是，但是，不能与DSDT中任何已有名字冲突，否则后果很严重，很严重，很严重！！！</u><em>*</em>）。</p>
+<p>这个HEX码是怎么来的呢？推荐一个网站，可以将ASCII码转换成各种东西。</p>
 <p><code>http://tomeko.net/online_tools/ascii.php?lang=en</code></p>
-<p>​        比方说我要将素材中的“_BIF”改名成“XBIF”，打开网站，输入 _BIF，点击Convert，得到的内容就是Find*[HEX]一栏里要填的啦，同样再输入XBIF，点Convert，得到Replace[HEX]一栏的内容，很是方便。</p>
-<p><img src="/Users/Horton/Documents/Snipaste_2017-12-20_15-46-50.jpg" alt="Snipaste_2017-12-20_15-46-50"></p>
-<p><img src="/Users/Horton/Documents/_BIF.jpg" alt="_BIF"></p>
-<p>​        替换完成之后，保存，将SSDT-NEW.aml丢入EFI/CLOVER/ACPI/Patched/，Clover Configurator里面设置加载，完美！</p>
-<p><img src="/Users/Horton/Documents/jz.jpg" alt="jz"></p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>​        有些人说不管三七二十一将整个EC复制到新建的SSDT里面，我认为不可取，一是增加了后面定义模块的工作量，二是容易产生一些不可预料的错误。</p>
-<p>​        抛砖引玉，不足之处欢迎指正。</p>
-<p>​        附上本文素材地址：链接: <a href="https://pan.baidu.com/s/1slgG2uD" target="_blank" rel="noopener">https://pan.baidu.com/s/1slgG2uD</a> 密码: upku</p>
+<p>比方说我要将素材中的“_BIF”改名成“XBIF”，打开网站，输入 _BIF，点击Convert，得到的内容就是Find*[HEX]一栏里要填的啦，同样再输入XBIF，点Convert，得到Replace[HEX]一栏的内容，很是方便。</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/Snipaste_2017-12-20_15-46-50.jpg">
+
+<p>替换完成之后，保存，将SSDT-NEW.aml丢入EFI/CLOVER/ACPI/Patched/，Clover Configurator里面设置加载，完美！</p>
+<img src="/2017/12/20/浅谈笔记本黑苹果电池部分hotpatch/jz.jpg">
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>有些人说不管三七二十一将整个EC复制到新建的SSDT里面，我认为不可取，一是增加了后面定义模块的工作量，二是容易产生一些不可预料的错误。</p>
+<p>抛砖引玉，不足之处欢迎指正。</p>
+<p>附上本文素材地址：链接: <a href="https://pan.baidu.com/s/1slgG2uD" target="_blank" rel="noopener">https://pan.baidu.com/s/1slgG2uD</a> 密码: upku</p>
 <blockquote>
 <p>引用<a href="https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/" target="_blank" rel="noopener">https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/</a> , Rehabman</p>
 </blockquote>
@@ -445,22 +425,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/11/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -534,7 +498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
